@@ -20,10 +20,13 @@
       </a-entity>
   	</a-marker>
       
-       <a-marker-camera type='pattern' url='https://raw.githubusercontent.com/rosen-stern/honeysuckle/main/pattern-honeysuckle.patt'>
+<!-- WORKING LINE TO GET CUSTOM PATTERN, BUT FOR SOME REASON THE MODEL FOLLOWS THE CAMERA EVEN WHEN MARKER IS NOT IN RANGE        
+<a-marker-camera type='pattern' url='https://raw.githubusercontent.com/rosen-stern/honeysuckle/main/pattern-honeysuckle.patt'> 
+-->
+      <a-marker type='pattern' url='https://raw.githubusercontent.com/rosen-stern/honeysuckle/main/pattern-honeysuckle.patt'>
       <a-entity gltf-model="#honeysuckle-animation" animation-mixer>
       </a-entity>
-  	</<a-marker-camera>
+  	</<a-marker>
     </a-scene>
   </body>
 </html>
