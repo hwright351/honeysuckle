@@ -6,7 +6,8 @@
 
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <!-- we import arjs version without NFT but with marker + location based support -->
-  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
   
   <body style='margin : 0px; overflow: hidden;'>
     <a-scene embedded arjs='trackingMethod: best;'>
@@ -15,12 +16,12 @@
         <a-asset-item id="honeysuckle" src="honeysuckle.gltf"></a-asset-item>
     </a-assets>
   	<a-marker preset="hiro">
-      <a-entity scale="0.25 0.25 0.25" gltf-model="#honeysuckle" rotation= "0 0 0" position= "0 0 0">
+      <a-entity relative-scale="0.25 0.25 0.25" gltf-model="#honeysuckle" rotation= "0 0 0" position= "0 0 0">
       </a-entity>
   	</a-marker>
       
        <a-marker preset="kanji">
-      <a-entity scale="0.25 0.25 0.25" gltf-model="#honeysuckle-animation" position= "0 0 0">
+      <a-entity scale="0.25 0.25 0.25" gltf-model="#honeysuckle-animation" position= "0 0 0" animation-mixer>
       </a-entity>
   	</a-marker>
     </a-scene>
