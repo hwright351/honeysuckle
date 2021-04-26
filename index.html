@@ -31,4 +31,35 @@
   	</<a-marker>
     </a-scene>
   </body>
+    
+    <script>
+      AFRAME.registerComponent("marker-distance", {
+
+tick: function () {
+    this.markerDistance()
+},
+markerDistance: function () {
+
+    var marker1Pos, marker2Pos
+
+    var marker1 = document.querySelector("#letraU")
+    var marker2 = document.querySelector("#letraR")
+
+
+    marker1Pos = new THREE.Vector3();
+    marker1.object3D.getWorldPosition(marker1Pos);
+
+    marker2Pos = new THREE.Vector3();
+    marker2.object3D.getWorldPosition(marker2Pos);
+
+    //distance
+    this.d = marker1Pos.distanceTo(marker2Pos);
+    console.log("distance" + this.d)
+
+
+}
+});
+    </script>
+    
+    
 </html>
