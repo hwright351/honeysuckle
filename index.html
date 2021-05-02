@@ -58,35 +58,6 @@
     
     <script>
       
-      //not working yet :c 
-      
-     // https://stackoverflow.com/questions/61239107/how-to-get-marker-position-x-y-ar-js
-      AFRAME.registerComponent("marker-distance", {
-
-tick: function () {
-    this.markerDistance()
-},
-markerDistance: function () {
-
-    var marker1Pos, marker2Pos
-
-    var marker1 = document.querySelector("#honeysuckle-animation")
-    var marker2 = document.querySelector("#honeysuckle")
-
-
-    marker1Pos = new THREE.Vector3();
-    marker1.object3D.getWorldPosition(marker1Pos);
-
-    marker2Pos = new THREE.Vector3();
-    marker2.object3D.getWorldPosition(marker2Pos);
-
-    //distance
-    this.d = marker1Pos.distanceTo(marker2Pos);
-    console.log("distance" + this.d)
-
-
-}
-});
     </script>
     
     
