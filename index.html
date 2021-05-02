@@ -1,9 +1,10 @@
 <!doctype HTML>
-<!-- testing javascript  4 -->
+<!-- testing javascript  5 -->
   <!-- https://blog.theodo.com/2018/09/build-first-ar-web-app-less-10mn/ --> 
   
 <html>
 
+  <head>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <!-- we import arjs version without NFT but with marker + location based support -->
 <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
@@ -11,25 +12,8 @@
   
 <!--   https://github.com/supermedium/superframe/tree/master/components/look-at/ -->
  <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-  
-
-    <script>
-
-      //https://stackoverflow.com/questions/30620110/how-to-count-the-amount-of-markers-visible-in-a-text-box-on-google-maps
-      function countMarkers(markers) {
-
-    var count = 0;
-    $.each(markers, function (i, marker) {
-        console.log(marker.visible);
-        if (marker.visible == true) {
-            count++;
-        }
-    });
-    $('#marker-03').val(count);
-}
-      
-  </script>
-  
+ 
+  </head>
   
   <body style='margin : 0px; overflow: hidden;'>
     <a-scene embedded arjs='trackingMethod: best;'>
@@ -71,6 +55,25 @@
     </a-scene>
   </body>  
   
+  
+  
+  
+    <script>
+
+      //https://stackoverflow.com/questions/30620110/how-to-count-the-amount-of-markers-visible-in-a-text-box-on-google-maps
+      function countMarkers(markers) {
+
+    var count = 0;
+    $.each(markers, function (i, marker) {
+        console.log(marker.visible);
+        if (marker.visible == true) {
+            count++;
+        }
+    });
+    $('#marker-03').val(count);
+}
+      
+  </script>
 
   
   
