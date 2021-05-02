@@ -1,5 +1,5 @@
 <!doctype HTML>
-<!-- testing javascript  -->
+<!-- testing javascript  2 -->
   <!-- https://blog.theodo.com/2018/09/build-first-ar-web-app-less-10mn/ --> 
   
 <html>
@@ -54,18 +54,11 @@
   </body>  
   
   <script>
+    //https://stackoverflow.com/questions/44799413/how-to-detect-when-a-marker-is-found-in-ar-js
     
-    //https://stackoverflow.com/questions/48004419/how-to-detect-with-a-script-when-marker-is-found-using-aframe-ar-js
-AFRAME.registerComponent('markerhandler', {
-   tick:function() {
-      if(document.querySelector("#marker-1").object3D.visible == true) {
-      console.log("marker present!");
-      } else {
-        console.log("marker NOT present!");
-      // MARKER IS HIDDEN
-      }
-   }
-});
+anchorRef.addEventListener("markerFound", (e)=>{ 
+console.log("marker found!");
+}
     
   </script>
   
