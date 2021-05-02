@@ -1,5 +1,5 @@
 <!doctype HTML>
-<!-- testing javascript  5 -->
+<!-- testing javascript  6 -->
   <!-- https://blog.theodo.com/2018/09/build-first-ar-web-app-less-10mn/ --> 
   
 <html>
@@ -60,18 +60,27 @@
   
     <script>
 
-      //https://stackoverflow.com/questions/30620110/how-to-count-the-amount-of-markers-visible-in-a-text-box-on-google-maps
-      function countMarkers(markers) {
+// https://stackoverflow.com/questions/51363819/how-to-load-or-play-video-playback-when-the-marker-is-detected-hiro
+      
+      AFRAME.registerComponent('garden', {
+  init: function () {
+    this.toggle = false;
 
-    var count = 0;
-    $.each(markers, function (i, marker) {
-        console.log(marker.visible);
-        if (marker.visible == true) {
-            count++;
-        }
-    });
-    $('#marker-03').val(count);
-}
+  },
+  tick:function(){  
+   if(document.querySelector("#marker-03").object3D.visible == true){
+
+     console.log("visible!");
+     
+   }else{
+
+     
+     console.log("NOT visible!");
+     
+   }
+  }
+});
+      
       
   </script>
 
