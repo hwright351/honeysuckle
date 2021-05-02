@@ -1,5 +1,5 @@
 <!doctype HTML>
-<!-- testing javascript  2 -->
+<!-- testing javascript  3 -->
   <!-- https://blog.theodo.com/2018/09/build-first-ar-web-app-less-10mn/ --> 
   
 <html>
@@ -11,6 +11,16 @@
   
 <!--   https://github.com/supermedium/superframe/tree/master/components/look-at/ -->
  <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+  
+
+    <script>
+    //https://stackoverflow.com/questions/44799413/how-to-detect-when-a-marker-is-found-in-ar-js
+    
+anchorRef.addEventListener("markerFound", (e)=>{ 
+console.log("marker found!");
+}
+    
+  </script>
   
   
   <body style='margin : 0px; overflow: hidden;'>
@@ -53,14 +63,7 @@
     </a-scene>
   </body>  
   
-  <script>
-    //https://stackoverflow.com/questions/44799413/how-to-detect-when-a-marker-is-found-in-ar-js
-    
-anchorRef.addEventListener("markerFound", (e)=>{ 
-console.log("marker found!");
-}
-    
-  </script>
+
   
   
 </html>
