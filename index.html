@@ -18,17 +18,27 @@
         <a-asset-item id="honeysuckle" src="honeysuckle.gltf"></a-asset-item>
     </a-assets>
       
-<!--       Not moving, HIRO marker -->
+<!--       HIRO : Not moving, HIRO marker -->
   	<a-marker preset="hiro">
       <a-entity scale="0.20 0.20 0.20" gltf-model="#honeysuckle">
       </a-entity>
   	</a-marker>
 
-<!--       Animated, custom marker -->
-      <a-marker type='pattern' url='https://raw.githubusercontent.com/rosen-stern/honeysuckle/main/pattern-honeysuckle.patt'>
+<!--       PATTERN 01 : Animated, custom marker -->
+      <a-marker type='pattern' url='https://raw.githubusercontent.com/rosen-stern/honeysuckle/main/pattern-honeysuckle-01.patt'>
       <a-entity position="0 -1.5 -1.5" scale="0.10 0.10 0.10" gltf-model="#honeysuckle-animation" animation-mixer>
       </a-entity>
   	</<a-marker>
+        
+ <!--       PATTERN 02 : Not animated, custom marker -->
+      <a-marker type='pattern' url='https://raw.githubusercontent.com/rosen-stern/honeysuckle/main/pattern-honeysuckle-02.patt'>
+      <a-entity position="0 -1.5 -1.5" scale="0.10 0.10 0.10" gltf-model="#honeysuckle" animation-mixer>
+      <a-entity position="1 0 0" scale="3 3 3" text="value: HONEY SUCKLES DO THINGS. ISN'T THAT COOL?;color:black"></a-entity>
+      </a-entity>
+  	</<a-marker>
+        
+        
+        
     </a-scene>
   </body>
     
