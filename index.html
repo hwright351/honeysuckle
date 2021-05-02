@@ -1,5 +1,5 @@
 <!doctype HTML>
-<!-- testing javascript  3 -->
+<!-- testing javascript  4 -->
   <!-- https://blog.theodo.com/2018/09/build-first-ar-web-app-less-10mn/ --> 
   
 <html>
@@ -14,12 +14,20 @@
   
 
     <script>
-    //https://stackoverflow.com/questions/44799413/how-to-detect-when-a-marker-is-found-in-ar-js
-    
-anchorRef.addEventListener("markerFound", (e)=>{ 
-console.log("marker found!");
+
+      //https://stackoverflow.com/questions/30620110/how-to-count-the-amount-of-markers-visible-in-a-text-box-on-google-maps
+      function countMarkers(markers) {
+
+    var count = 0;
+    $.each(markers, function (i, marker) {
+        console.log(marker.visible);
+        if (marker.visible == true) {
+            count++;
+        }
+    });
+    $('#marker-03').val(count);
 }
-    
+      
   </script>
   
   
@@ -53,7 +61,7 @@ console.log("marker found!");
 
 <!--       PATTERN 03 : Not animated, custom marker -->
 <!--       https://github.com/supermedium/superframe/tree/master/components/look-at/ -->
-  	<a-marker type='pattern' url='https://raw.githubusercontent.com/rosen-stern/honeysuckle/main/pattern-honeysuckle-03.patt' id="marker-1">
+  	<a-marker type='pattern' url='https://raw.githubusercontent.com/rosen-stern/honeysuckle/main/pattern-honeysuckle-03.patt' id="marker-03">
       <a-entity position="0 -1.5 -1.5" scale="0.20 0.20 0.20" gltf-model="#honeysuckle"></a-entity>
        <a-entity position="0 -1.5 -1.5" rotation="0 45 0" scale="2 2 2" text="value: Honey suckles do things! Isn't that cool?;color:white" look-at="[camera]"></a-entity>
   	</a-marker>
