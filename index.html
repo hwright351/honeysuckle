@@ -1,5 +1,5 @@
 <!doctype HTML>
-<!-- testing marker  -->
+<!-- testing javascript  -->
   <!-- https://blog.theodo.com/2018/09/build-first-ar-web-app-less-10mn/ --> 
   
 <html>
@@ -43,7 +43,7 @@
 
 <!--       PATTERN 03 : Not animated, custom marker -->
 <!--       https://github.com/supermedium/superframe/tree/master/components/look-at/ -->
-  	<a-marker type='pattern' url='https://raw.githubusercontent.com/rosen-stern/honeysuckle/main/pattern-honeysuckle-03.patt'>
+  	<a-marker type='pattern' url='https://raw.githubusercontent.com/rosen-stern/honeysuckle/main/pattern-honeysuckle-03.patt' id="marker-1">
       <a-entity position="0 -1.5 -1.5" scale="0.20 0.20 0.20" gltf-model="#honeysuckle"></a-entity>
        <a-entity position="0 -1.5 -1.5" rotation="0 45 0" scale="2 2 2" text="value: Honey suckles do things! Isn't that cool?;color:white" look-at="[camera]"></a-entity>
   	</a-marker>
@@ -55,31 +55,17 @@
   
   <script>
     
-    // import this on your HTML
-window.addEventListener('load', () => {
-    const camera = document.querySelector('[camera]');
-    const marker = document.querySelector('a-marker');
-    let check;
-
-    marker.addEventListener('markerFound', () => {
-        let cameraPosition = camera.object3D.position;
-        let markerPosition = marker.object3D.position;
-        let distance = cameraPosition.distanceTo(markerPosition)
-
-        check = setInterval(() => {
-            cameraPosition = camera.object3D.position;
-            markerPosition = marker.object3D.position;
-            distance = cameraPosition.distanceTo(markerPosition)
-
-            // do what you want with the distance:
-            console.log(distance);
-        }, 100);
-    });
-
-    marker.addEventListener('markerLost', () => {
-      clearInterval(check);
-    })
-})
+    //https://stackoverflow.com/questions/48004419/how-to-detect-with-a-script-when-marker-is-found-using-aframe-ar-js
+AFRAME.registerComponent('markerhandler', {
+   tick:function() {
+      if(document.querySelector("#marker-1").object3D.visible == true) {
+      console.log("marker present!");
+      } else {
+        console.log("marker NOT present!");
+      // MARKER IS HIDDEN
+      }
+   }
+});
     
   </script>
   
