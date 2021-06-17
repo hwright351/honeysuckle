@@ -9,6 +9,8 @@
   <!-- we import arjs version without NFT but with marker + location based support -->
 <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.5/aframe/build/aframe-ar.js"> </script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+
   
 <!--   https://github.com/supermedium/superframe/tree/master/components/look-at/ -->
  <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
@@ -21,15 +23,16 @@
       
      <a-assets>
       <a-asset-item id="honeysuckle-animation" src="honeysuckle-animation.glb"></a-asset-item>
-        <a-asset-item id="honeysuckle" src="honeysuckle.gltf"></a-asset-item>
+        <a-asset-item id="honeysuckle" src="honeysuckle.gltf" response-type="arraybuffer"></a-asset-item>
        <video id="test_vid" autoplay="true" loop="false" src="test_vid.mov"></video>
        <img id="test_graphic" src="test_graphic.png"> 
-       
     </a-assets>
 
+      
+      
 <!--       PATTERN 01 : Animated, custom marker -->
      <a-marker type='pattern' url='https://raw.githubusercontent.com/rosen-stern/honeysuckle/main/pattern-honeysuckle-01.patt'>
-      <a-entity position="0 0 0" scale="0.20 0.20 0.20" gltf-model="#honeysuckle-animation">
+      <a-entity position="0 0 0" scale="0.20 0.20 0.20" gltf-model="#honeysuckle-animation" animation-mixer:"clip:honeysuckle-animation" loop:"infinite">
       </a-entity>
   	</a-marker>
         
