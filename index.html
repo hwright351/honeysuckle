@@ -23,7 +23,6 @@
       
      <a-assets>
       <a-asset-item id="honeysuckle-animation" src="honeysuckle-animation.glb" response-type="arraybuffer"></a-asset-item>
-       <a-asset-item id="bird-animation" src="bird.glb" response-type="arraybuffer"></a-asset-item>
         <a-asset-item id="honeysuckle" src="honeysuckle.gltf"></a-asset-item>
        <video id="test_vid" autoplay="true" loop="false" src="test_vid.mov"></video>
        <img id="test_graphic" src="test_graphic.png"> 
@@ -36,20 +35,15 @@
       <a-entity position="0 0 0" scale="0.20 0.20 0.20" gltf-model="#honeysuckle-animation" animation-mixer:"clip:honeysuckle-animation.glb" loop:"infinite">
       </a-entity>
   	</a-marker>
-      
-       <a-marker type='pattern' url='https://raw.githubusercontent.com/rosen-stern/honeysuckle/main/pattern-honeysuckle-02.patt'>
-      <a-entity position="0 0 0" scale="0.20 0.20 0.20" gltf-model="#bird-animation" animation-mixer:"clip:Take 001" loop:"infinite">
-      </a-entity>
-  	</a-marker>
-      
+     
       
       
         
 <!--    PATTERN 02 : Not animated, custom marker -->
-<!--   	<a-marker type='pattern' url='https://raw.githubusercontent.com/rosen-stern/honeysuckle/main/pattern-honeysuckle-02.patt'>
+  	<a-marker type='pattern' url='https://raw.githubusercontent.com/rosen-stern/honeysuckle/main/pattern-honeysuckle-02.patt'>
       <a-entity position="0 0 0" scale="0.20 0.20 0.20" gltf-model="#honeysuckle">
       </a-entity>
-  	</a-marker> -->
+  	</a-marker>
 
 
 <!--       PATTERN 03 : Not animated, custom marker -->
