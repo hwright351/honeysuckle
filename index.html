@@ -74,7 +74,7 @@
   
   
   
-    <script>
+<!--     <script>
 
 // https://stackoverflow.com/questions/51363819/how-to-load-or-play-video-playback-when-the-marker-is-detected-hiro
       
@@ -102,8 +102,14 @@
 });
       
       
-  </script>
+  </script> -->
 
+    <script>
+      this.el.addEventListener('model-loaded', e => {
+    console.log(document.getElementById("honeysuckle-animation").components['gltf-model'].model.animations)
+})
+       
+    </script>
   
   
 </html>
