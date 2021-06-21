@@ -24,7 +24,13 @@
      <a-assets>
       <a-asset-item id="honeysuckle-animation" src="honeysuckle-animation.glb" response-type="arraybuffer"></a-asset-item>
         <a-asset-item id="honeysuckle" src="honeysuckle.gltf"></a-asset-item>
-       <video id="test_vid" autoplay="true" loop="false" src="test_vid.mov"></video>
+<!--        <video id="test_vid" autoplay="true" loop="false" src="test_vid.mov"></video> -->
+      
+       <video id="videoBunny" preload="auto"
+               src="https://cdn.aframe.io/videos/bunny.mp4"
+               width="160" height="90" autoplay loop="true"
+               crossOrigin="anonymous" muted></video>
+       
        <img id="test_graphic" src="test_graphic.png"> 
     </a-assets>
 
@@ -32,7 +38,7 @@
       
 <!--       PATTERN 01 : Animated, custom marker -->
      <a-marker type='pattern' url='https://raw.githubusercontent.com/rosen-stern/honeysuckle/main/pattern-honeysuckle-01.patt'>
-      <a-entity position="0 0 0" scale="0.20 0.20 0.20" gltf-model="#honeysuckle-animation" animation-mixer:"clip:honeysuckle-animation.glb" loop:"infinite">
+      <a-entity position="0 0 0" scale="0.20 0.20 0.20" gltf-model="#honeysuckle-animation" animation-mixer:"clip:honeysuckle-animation" loop:"infinite">
       </a-entity>
   	</a-marker>
      
@@ -54,62 +60,55 @@
        <a-entity position="0 1 1" rotation="0 45 0" scale="2 2 2" geometry:"primitive:plane color:#000000" text="value: Honey suckles do things! Isn't that cool?;color:#FFFFFF" look-at="[camera]"></a-entity>
   	</a-marker>
         
-      <a-marker preset='kanji'>
-        <a-video src="#test_vid" position="0 0 0" rotation="45 0 0" scale=".2 .2 .2" width="9" height="16" material="shader:flat; side:double;" look-at="[camera]"> </a-video>
-        </a-marker>
+      
       
       <a-marker preset='hiro'>
+<!--         <a-video src="#test_vid" position="0 0 0" rotation="45 0 0" scale=".2 .2 .2" width="9" height="16" material="shader:flat; side:double;" look-at="[camera]"> </a-video> -->
+        <a-entity material="shader: flat; src: #videoBunny"
+                geometry="primitive: plane; width: 160; height: 90;"
+                position="0 0 0"
+                rotation="0 0 0"
+                play-on-click
+                visible="false">
+      </a-entity>
+        </a-marker>
+      
+      <a-marker preset='kanji'>
         <a-image src="#test_graphic" position="0 0 0" rotation="90 90 0" scale="1 1 1" look-at="[camera]"></a-image>
 <!--         <a-animation attribute:"rotation" to: "360 405 45" begin="click" dur="1500"></a-animation> -->
 <!--         <a-animation attribute:"scale" to: "3 3 3" begin="mouseenter" dur="200"></a-animation>
         <a-animation attribute:"scale" to: "1 1 1" begin="mouseleave" dur="200"></a-animation> -->
         </a-marker>
      
-<!--      <a-camera>
-       <a-cursor></a-cursor>
+     <a-camera>
+<!--        <a-cursor></a-cursor> -->
+       <a-entity
+          position="0 0 -1.5"
+          text="align: center;
+                width: 6;
+                wrapCount: 100;
+                color: black;
+                value: Click or tap to start video"
+          hide-on-play="#videoFireworks">
+        </a-entity>
       </a-camera>   
-    </a-scene> -->
+      
+      
+    </a-scene>
   </body>  
   
   
   
-  
+ 
+<!-- https://stackoverflow.com/questions/51363819/how-to-load-or-play-video-playback-when-the-marker-is-detected-hiro
+       -->
+
 <!--     <script>
-
-// https://stackoverflow.com/questions/51363819/how-to-load-or-play-video-playback-when-the-marker-is-detected-hiro
-      
-      //trying to detect 2 markers to make a "garden"
-      //below doesn't work
-      
-      AFRAME.registerComponent('garden', {
-  init: function () {
-    this.toggle = false;
-
-    console.log("-----------------------------------------------------loaded!");
-  },
-  tick:function(){  
-   if(document.querySelector("#marker-03").object3D.visible == true){
-
-     console.log("visible!");
-     
-   }else{
-
-     
-     console.log("NOT visible!");
-     
-   }
-  }
-});
-      
-      
-  </script> -->
-
-    <script>
       this.el.addEventListener('model-loaded', e => {
     console.log(document.getElementById("honeysuckle-animation").components['gltf-model'].model.animations)
 })
        
-    </script>
+    </script> -->
   
   
 </html>
